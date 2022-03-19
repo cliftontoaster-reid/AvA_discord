@@ -84,7 +84,7 @@ async function playAudio(track, message_discord) {
         if (newOne.status == "idle") {
             audiostat.playing = false
             if (queue.length === 0) {
-                return;
+                connection.destroy()
             } else {
                 playAudio(queue[0], null)
             }
