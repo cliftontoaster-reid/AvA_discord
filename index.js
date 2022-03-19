@@ -95,6 +95,7 @@ async function playAudio(track, message_discord) {
     connection.subscribe(player)
 }
 
+
 /// END FUNCTIONS
 
 client.on('messageCreate', async (message) => {
