@@ -54,7 +54,7 @@ async function playAudio(track, message_discord) {
     }
 
     console.info(queue.length)
-    
+
 
     if (audiostat.playing) {
         return console.log('added')
@@ -129,6 +129,9 @@ client.on('messageCreate', async (message) => {
             } else if (data.intents[0].name === "AUDIO_PAUSE") {
                 if (!player) return message.reply('Player does not exist')
                 player.pause()
+            } else if (data.intents[0].name === "AUDIO_STOP") {
+                audiostat.playing = false
+                connection.destroy()
             }
 
 
